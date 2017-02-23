@@ -14,6 +14,13 @@ public class Bolt {
 		this.tulajdonos = tulajdonos;
 		this.tejpult = tejpult;
 	}
+	
+	public Bolt(String nev, String cim, String tulajdonos) {
+		super();
+		this.nev = nev;
+		this.cim = cim;
+		this.tulajdonos = tulajdonos;
+	}
 
 	public String getNev() {
 		return nev;
@@ -37,6 +44,10 @@ public class Bolt {
 	
 	public Tej vasarolTej(Tej m){
 		return m;
+	}
+	
+	public void feltoltTej(Tej m){
+		;
 	}
 
 }
