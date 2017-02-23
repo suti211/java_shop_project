@@ -1,21 +1,22 @@
 package bolt;
 
-import java.util.Vector;
+import java.util.Hashtable;
+import java.util.Map;
 
 public class Bolt {
 	private String nev;
 	private String cim;
 	private String tulajdonos;
-	private Vector<Tej> tejpult;
+	private Hashtable<Tej, Long> tejpult;
 
-	public Bolt(String nev, String cim, String tulajdonos, Vector<Tej> tejpult) {
+	public Bolt(String nev, String cim, String tulajdonos, Hashtable<Tej, Long> tejpult) {
 		super();
 		this.nev = nev;
 		this.cim = cim;
 		this.tulajdonos = tulajdonos;
 		this.tejpult = tejpult;
 	}
-	
+
 	public Bolt(String nev, String cim, String tulajdonos) {
 		super();
 		this.nev = nev;
@@ -42,15 +43,27 @@ public class Bolt {
 			return false;
 		}
 	}
-	
-	public Tej vasarolTej(Tej m){
-		tejpult.removeElement(m);
-		return m;
+
+	public Tej vasarolTej(Long vonalKod) throws Exception{
+		Tej tej = null;
+		if(tejpult.containsValue(vonalKod)){
+			for(Map.Entry entry : tejpult.entrySet()){
+				if(vonalKod.equals(entry.getValue())){
+					tej = (Tej)entry.getKey();
+					tejpult.remove(entry.getKey());
+					break;
+				}
+			}		
+		}
+		else{
+			throw new Exception("Nincs ilyen tej");
+		}
+		return tej;
 		
 	}
-	
-	public void feltoltTej(Tej m){
-		tejpult.addElement(m);
+
+	public void feltoltTej(Tej m) {
+		tejpult.put(m, m.getVonalKod());
 	}
 
 }
