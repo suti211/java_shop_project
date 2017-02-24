@@ -11,19 +11,17 @@ public class Tej {
 	private final double ZSIROS = 2.8;
 	private final double FELZSIROS = 1.5;
 	
-	private long vonalKod;
-	private int urtartalom;
-	private String gyarto;
-	private Date szavatossagiIdo;
-	private double zsirtartalom;
-	private long ar;
+	protected long vonalKod;
+	protected int urtartalom;
+	protected String gyarto;
+	protected Date szavatossagiIdo;
+	protected double zsirtartalom;
 
-	public Tej(long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom, long ar) {
+	public Tej(long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
 		this.urtartalom = urtartalom;
 		this.gyarto = gyarto;
 		this.szavatossagiIdo = szavatossagiIdo;
 		this.zsirtartalom = zsirtartalom;
-		this.ar = ar;
 		this.vonalKod = vonalKod;
 	}
 
@@ -64,7 +62,7 @@ public class Tej {
 	@Override
 	public String toString() {
 		return "Tej [vonalkod=" + vonalKod + ", urtartalom=" + urtartalom + ", gyarto=" + gyarto + ", szavatossagiIdo=" + szavatossagiIdo
-				+ ", zsirtartalom=" + zsirtartalom + ", ar=" + ar + "]";
+				+ ", zsirtartalom=" + zsirtartalom + "]";
 	}
 	
 	
