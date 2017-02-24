@@ -2,6 +2,7 @@ package bolt;
 
 import java.util.Hashtable;
 import java.util.Map;
+import bolt.sajt.Sajt;
 
 public class Bolt {
 	private String nev;
