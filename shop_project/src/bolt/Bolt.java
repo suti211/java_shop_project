@@ -2,7 +2,6 @@ package bolt;
 
 import java.util.Hashtable;
 import java.util.Map;
-import static java.lang.Math.toIntExact;
 
 public class Bolt {
 	private String nev;
