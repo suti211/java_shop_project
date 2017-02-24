@@ -44,10 +44,6 @@ public class Tej {
 	public long getVonalKod() {
 		return vonalKod;
 	}
-
-	public long getAr() {
-		return ar;
-	}
 	
 	public boolean joMeg(){
 		Date today = new Date();
