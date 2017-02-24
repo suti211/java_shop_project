@@ -66,7 +66,7 @@ public class Bolt {
 		tejpult.put(m, m.getVonalKod());
 	}
 	
-	private class BoltBejegyzes{
+	class BoltBejegyzes{
 		
 		private Tej t;
 		private int ar;
