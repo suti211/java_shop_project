@@ -1,8 +1,10 @@
-package bolt;
+package bolt.aruk;
+
 
 import java.util.Hashtable;
 import java.util.Map;
-import bolt.sajt.Sajt;
+
+import bolt.aruk.sajt.Sajt;
 
 public class Bolt {
 	private String nev;

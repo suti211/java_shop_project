@@ -1,6 +1,6 @@
-package bolt.sajt;
+package bolt.aruk.sajt;
 
-import bolt.Elelmiszer;
+import bolt.aruk.Elelmiszer;
 
 public abstract class Sajt extends Elelmiszer {
 
