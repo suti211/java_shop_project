@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class Tej {
 	
-	private final int LITER = 10;
-	private final int FELLITER = 5;
-	private final int POHAR = 2;
+	public final int LITER = 10;
+	public final int FELLITER = 5;
+	public final int POHAR = 2;
 	
-	private final double ZSIROS = 2.8;
-	private final double FELZSIROS = 1.5;
+	public final double ZSIROS = 2.8;
+	public final double FELZSIROS = 1.5;
 	
 	protected long vonalKod;
 	protected int urtartalom;
