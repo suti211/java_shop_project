@@ -2,7 +2,7 @@ package bolt.aruk;
 
 import java.util.Hashtable;
 import java.util.Map;
-
+import bolt.Aru;
 import bolt.aruk.sajt.Sajt;
 
 public class Bolt {
@@ -72,7 +72,7 @@ public class Bolt {
 
 		for (Map.Entry<Class<? extends Aru>, BoltBejegyzes> entry : elelmiszerpult.entrySet()) {
 			Aru a = entry.getValue().getAru();
-			Long vk = new Long(a.vonalKod);
+			Long vk = new Long(a.getVonalKod());
 
 			if (vonalKod == vk) {
 				entry.getValue().levonMennyiseg(mennyiseg);
@@ -84,7 +84,7 @@ public class Bolt {
 
 		for (Map.Entry<Class<? extends Aru>, BoltBejegyzes> entry : elelmiszerpult.entrySet()) {
 			Aru a = entry.getValue().getAru();
-			Long vk = new Long(a.vonalKod);
+			Long vk = new Long(a.getVonalKod());
 
 			if (vonalKod == vk) {
 				entry.getValue().adMennyiseg(mennyiseg);

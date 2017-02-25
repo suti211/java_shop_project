@@ -1,4 +1,4 @@
-package bolt.kivetel;
+package bolt;
 
 public class BoltKivetel extends Exception {
 	

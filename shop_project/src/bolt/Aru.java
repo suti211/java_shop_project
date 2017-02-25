@@ -1,4 +1,4 @@
-package bolt.aruk;
+package bolt;
 
 public class Aru {
 

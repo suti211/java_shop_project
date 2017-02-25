@@ -1,6 +1,7 @@
 package bolt.aruk;
 
 import java.util.Date;
+import bolt.Aru;
 
 public abstract class Elelmiszer extends Aru {
 
