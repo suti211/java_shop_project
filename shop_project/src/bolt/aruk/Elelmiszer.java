@@ -2,30 +2,24 @@ package bolt.aruk;
 
 import java.util.Date;
 
-public abstract class Elelmiszer {
-	
-	protected long vonalKod;
-	protected String gyarto;
+public abstract class Elelmiszer extends Aru {
+
 	protected Date szavatossagiIdo;
-	
-	public String getGyarto() {
-		return gyarto;
+
+	public Elelmiszer(long vonalKod, String gyarto, Date szavatossagiIdo) {
+		super(vonalKod, gyarto);
+		this.szavatossagiIdo = szavatossagiIdo;
 	}
 
 	public Date getSzavatossagiIdo() {
 		return szavatossagiIdo;
 	}
-	
-	public long getVonalKod() {
-		return vonalKod;
-	}
-	
-	public boolean joMeg(){
+
+	public boolean joMeg() {
 		Date today = new Date();
-		if(today.after(szavatossagiIdo)){
+		if (today.after(szavatossagiIdo)) {
 			return false;
-		}
-		else{
+		} else {
 			return true;
 		}
 	}
@@ -34,7 +28,5 @@ public abstract class Elelmiszer {
 	public String toString() {
 		return "Elelmiszer [vonalKod=" + vonalKod + ", gyarto=" + gyarto + ", szavatossagiIdo=" + szavatossagiIdo + "]";
 	}
-	
-	
 
 }

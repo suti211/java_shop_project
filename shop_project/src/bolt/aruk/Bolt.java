@@ -1,6 +1,5 @@
 package bolt.aruk;
 
-
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -10,10 +9,10 @@ public class Bolt {
 	private String nev;
 	private String cim;
 	private String tulajdonos;
-	private Hashtable<Class<? extends Elelmiszer>, BoltBejegyzes> elelmiszerpult;
+	private Hashtable<Class<? extends Aru>, BoltBejegyzes> elelmiszerpult;
 
 	public Bolt(String nev, String cim, String tulajdonos,
-			Hashtable<Class<? extends Elelmiszer>, BoltBejegyzes> elelmiszerpult) {
+			Hashtable<Class<? extends Aru>, BoltBejegyzes> elelmiszerpult) {
 		super();
 		this.nev = nev;
 		this.cim = cim;
@@ -48,11 +47,11 @@ public class Bolt {
 		return vanMegAdottAru(Sajt.class);
 	}
 
-	private boolean vanMegAdottAru(Class<? extends Elelmiszer> c) {
+	private boolean vanMegAdottAru(Class<? extends Aru> c) {
 
 		int aruszam = 0;
 
-		for (Class<? extends Elelmiszer> cls : elelmiszerpult.keySet()) {
+		for (Class<? extends Aru> cls : elelmiszerpult.keySet()) {
 			if (cls.getName().equals(c.getName())) {
 				if (elelmiszerpult.get(cls).mennyiseg > 0) {
 					return true;
@@ -69,11 +68,11 @@ public class Bolt {
 		}
 	}
 
-	public void vasarolElelmiszert(Long vonalKod, long mennyiseg) throws Exception {
-		
-		for (Map.Entry<Class<? extends Elelmiszer>, BoltBejegyzes> entry : elelmiszerpult.entrySet()) {
-			Elelmiszer e = entry.getValue().getElelmiszer();
-			Long vk = new Long(e.vonalKod);
+	public void vasarolElelmiszert(Long vonalKod, long mennyiseg) {
+
+		for (Map.Entry<Class<? extends Aru>, BoltBejegyzes> entry : elelmiszerpult.entrySet()) {
+			Aru a = entry.getValue().getAru();
+			Long vk = new Long(a.vonalKod);
 
 			if (vonalKod == vk) {
 				entry.getValue().levonMennyiseg(mennyiseg);
@@ -83,9 +82,9 @@ public class Bolt {
 
 	public void feltoltElelmiszerrel(Long vonalKod, Long mennyiseg) {
 
-		for (Map.Entry<Class<? extends Elelmiszer>, BoltBejegyzes> entry : elelmiszerpult.entrySet()) {
-			Elelmiszer e = entry.getValue().getElelmiszer();
-			Long vk = new Long(e.vonalKod);
+		for (Map.Entry<Class<? extends Aru>, BoltBejegyzes> entry : elelmiszerpult.entrySet()) {
+			Aru a = entry.getValue().getAru();
+			Long vk = new Long(a.vonalKod);
 
 			if (vonalKod == vk) {
 				entry.getValue().adMennyiseg(mennyiseg);
@@ -101,22 +100,22 @@ public class Bolt {
 
 	class BoltBejegyzes {
 
-		private Elelmiszer e;
+		private Aru a;
 		private long ar;
 		private long mennyiseg;
 
-		public BoltBejegyzes(Elelmiszer e, long ar, long mennyiseg) {
-			this.e = e;
+		public BoltBejegyzes(Aru a, long ar, long mennyiseg) {
+			this.a = a;
 			this.ar = ar;
 			this.mennyiseg = mennyiseg;
 		}
 
-		public Elelmiszer getElelmiszer() {
-			return e;
+		public Aru getAru() {
+			return a;
 		}
 
-		public void setElelmiszer(Elelmiszer e) {
-			this.e = e;
+		public void setAru(Aru a) {
+			this.a = a;
 		}
 
 		public long getMennyiseg() {
